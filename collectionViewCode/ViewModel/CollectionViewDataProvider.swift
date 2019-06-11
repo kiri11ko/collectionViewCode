@@ -10,7 +10,6 @@ import UIKit
 
 class ColletionViewDataProvider: NSObject {
     
-    let delegate: UICollectionViewDelegate? = nil
     let datasource: UICollectionViewDataSource? = nil
     var collectionView: UICollectionView? = nil
     let dataManager = CollectionViewDataManager()

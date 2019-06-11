@@ -13,17 +13,14 @@ class ViewController: UIViewController {
     private var token: NSKeyValueObservation?
     
     lazy var collectionView: UICollectionView = {
-        
         let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
         layout.itemSize = CGSize(width: 90, height: 120)
-        
+    
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.dataSource = self.dataProvider
-        collectionView.delegate = self.dataProvider
         collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.backgroundColor = UIColor.white
-        
         return collectionView
     }()
     
@@ -36,7 +33,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(collectionView)
-        token = dataProvider.dataManager.observe(\CollectionViewDataManager.imageList, options: .new) { person, change in
+        token = dataProvider.dataManager.observe(\CollectionViewDataManager.imageList, options: .new) { _,_  in
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
