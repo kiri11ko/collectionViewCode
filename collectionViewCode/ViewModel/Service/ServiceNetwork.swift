@@ -12,28 +12,24 @@ class ServiceNetwork {
    fileprivate func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
-    fileprivate func showAlert(_ view: ViewController) {
-        DispatchQueue.main.async {
-            view.alert = UIAlertController(title: "Downlods", message: "Please wait...", preferredStyle: .alert)
-            view.show(view.alert!, sender: nil)
-        }
-    }
     
     fileprivate func dissmaisAlert(_ view: ViewController) {
+        guard let alert = view.alert else { return }
         DispatchQueue.main.async {
-            view.alert!.dismiss(animated: true, completion: nil)
-            //                view.setupCollectionView()
+            alert.dismiss(animated: true, completion: nil)
         }
     }
     
     func getJSON(view: ViewController, dataManager: CollectionViewDataManager) {
         showAlert(view)
-        let url = URL(string: "http://api.giphy.com/v1/gifs/search?q=usa&api_key=LWsGBFf74m2HA28HFcG33Dhj1WmHYO2o")
-        let task = URLSession.shared.dataTask(with: url!) {  (data, response, error)  in
+        guard let url = URL(string: "http://api.giphy.com/v1/gifs/search?q=usa&api_key=LWsGBFf74m2HA28HFcG33Dhj1WmHYO2o") else { return}
+        getData(from: url) { data, response, error in
             guard error == nil else { return }
+            guard let data = data else { return }
             let jsonDecoder = JSONDecoder()
-            let responseModel = try? jsonDecoder.decode(JsonBase.self, from: data!)
-            for value in responseModel!.data! {
+            guard let responseModel = try? jsonDecoder.decode(JsonBase.self, from: data) else { return }
+            guard let response = responseModel.data else { return }
+            for value in response {
                 DispatchQueue.global().async {
                     if let url = URL(string: (value.images?.original?.url) ?? "" ) {
                         self.getImage(url: url, view: view, dataManager: dataManager)
@@ -44,12 +40,10 @@ class ServiceNetwork {
             self.dissmaisAlert(view)
 
         }
-        task.resume()
     }
     
    fileprivate func getImage(url: URL, view: ViewController, dataManager: CollectionViewDataManager) {
             getData(from: url) { data, response, error in
-                
                 guard let data = data, error == nil else { return }
                 guard let image = UIImage(data: data) else { return }
             
@@ -57,5 +51,11 @@ class ServiceNetwork {
 
                 
              }
+    }
+    fileprivate func showAlert(_ view: ViewController) {
+        DispatchQueue.main.async {
+            view.alert = UIAlertController(title: "Downlods", message: "Please wait...", preferredStyle: .alert)
+            view.show(view.alert!, sender: nil)
+        }
     }
 }

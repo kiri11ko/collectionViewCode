@@ -26,13 +26,13 @@ class ViewController: UIViewController {
     
     lazy var dataProvider: ColletionViewDataProvider = {
         let dataProvider = ColletionViewDataProvider(view: self)
-        
         return dataProvider
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(collectionView)
+        
         token = dataProvider.dataManager.observe(\CollectionViewDataManager.imageList, options: .new) { _,_  in
             DispatchQueue.main.async {
                 self.collectionView.reloadData()

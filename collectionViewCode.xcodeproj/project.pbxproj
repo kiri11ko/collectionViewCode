@@ -103,7 +103,6 @@
 				1FD68C622254B1ED00BA6323 /* Model */,
 				1FD68C6B2254CD4300BA6323 /* ViewModel */,
 				1FD68C672254C18A00BA6323 /* View */,
-				1FD68C682254C37800BA6323 /* Service */,
 				1FD68BEA2254A16F00BA6323 /* Assets.xcassets */,
 				1FD68BEC2254A16F00BA6323 /* LaunchScreen.storyboard */,
 				1FD68BEF2254A16F00BA6323 /* Info.plist */,
@@ -159,6 +158,7 @@
 		1FD68C6B2254CD4300BA6323 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1FD68C682254C37800BA6323 /* Service */,
 				1F07859022AA8024007332DD /* CollectionViewDataProvider.swift */,
 				1FD68C692254C80F00BA6323 /* CollectionViewDataManager.swift */,
 			);

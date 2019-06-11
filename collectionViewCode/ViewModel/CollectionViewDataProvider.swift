@@ -11,7 +11,6 @@ import UIKit
 class ColletionViewDataProvider: NSObject {
     
     let datasource: UICollectionViewDataSource? = nil
-    var collectionView: UICollectionView? = nil
     let dataManager = CollectionViewDataManager()
     
     init(view: ViewController) {
