@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         let startViewController = ViewController()
-        ServiceNetwork.instance.getJSON(view: startViewController)
         window?.rootViewController = startViewController
         window?.makeKeyAndVisible()
         return true

@@ -34,7 +34,7 @@
 		1FD68C612254B1E700BA6323 /* Downsized_large.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD68C4D2254B1E700BA6323 /* Downsized_large.swift */; };
 		1FD68C642254B69A00BA6323 /* ServiceNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD68C632254B69A00BA6323 /* ServiceNetwork.swift */; };
 		1FD68C662254B94700BA6323 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD68C652254B94700BA6323 /* ImageCollectionViewCell.swift */; };
-		1FD68C6A2254C80F00BA6323 /* WorkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD68C692254C80F00BA6323 /* WorkData.swift */; };
+		1FD68C6A2254C80F00BA6323 /* CollectionViewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD68C692254C80F00BA6323 /* CollectionViewDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +67,7 @@
 		1FD68C4D2254B1E700BA6323 /* Downsized_large.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downsized_large.swift; sourceTree = "<group>"; };
 		1FD68C632254B69A00BA6323 /* ServiceNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceNetwork.swift; sourceTree = "<group>"; };
 		1FD68C652254B94700BA6323 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
-		1FD68C692254C80F00BA6323 /* WorkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkData.swift; sourceTree = "<group>"; };
+		1FD68C692254C80F00BA6323 /* CollectionViewDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,13 +100,13 @@
 		1FD68BE22254A16E00BA6323 /* ramaxTest */ = {
 			isa = PBXGroup;
 			children = (
+				1FD68C622254B1ED00BA6323 /* Model2 */,
 				1FD68C6B2254CD4300BA6323 /* ViewModel */,
 				1FD68C672254C18A00BA6323 /* View */,
 				1FD68C682254C37800BA6323 /* Service */,
 				1FD68BEA2254A16F00BA6323 /* Assets.xcassets */,
 				1FD68BEC2254A16F00BA6323 /* LaunchScreen.storyboard */,
 				1FD68BEF2254A16F00BA6323 /* Info.plist */,
-				1FD68C622254B1ED00BA6323 /* Model2 */,
 			);
 			path = ramaxTest;
 			sourceTree = "<group>";
@@ -142,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				1FD68BE52254A16E00BA6323 /* ViewController.swift */,
-				1F07859022AA8024007332DD /* CollectionViewDataProvider.swift */,
 				1FD68C652254B94700BA6323 /* ImageCollectionViewCell.swift */,
 			);
 			path = View;
@@ -160,7 +159,8 @@
 		1FD68C6B2254CD4300BA6323 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				1FD68C692254C80F00BA6323 /* WorkData.swift */,
+				1F07859022AA8024007332DD /* CollectionViewDataProvider.swift */,
+				1FD68C692254C80F00BA6323 /* CollectionViewDataManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -250,7 +250,7 @@
 				1F07859122AA8024007332DD /* CollectionViewDataProvider.swift in Sources */,
 				1FD68C542254B1E700BA6323 /* Pagination.swift in Sources */,
 				1FD68C5E2254B1E700BA6323 /* Images.swift in Sources */,
-				1FD68C6A2254C80F00BA6323 /* WorkData.swift in Sources */,
+				1FD68C6A2254C80F00BA6323 /* CollectionViewDataManager.swift in Sources */,
 				1FD68C582254B1E700BA6323 /* Original_still.swift in Sources */,
 				1FD68C612254B1E700BA6323 /* Downsized_large.swift in Sources */,
 				1FD68C572254B1E700BA6323 /* Meta.swift in Sources */,

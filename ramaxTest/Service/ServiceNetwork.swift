@@ -8,33 +8,46 @@
 
 import UIKit
 class ServiceNetwork {
-    static var instance = ServiceNetwork()
-    
-     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+
+   fileprivate func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
-     func getJSON(view: ViewController) {
+    fileprivate func showAlert(_ view: ViewController) {
+        DispatchQueue.main.async {
+            view.alert = UIAlertController(title: "Downlods", message: "Please wait...", preferredStyle: .alert)
+            view.show(view.alert!, sender: nil)
+        }
+    }
+    
+    fileprivate func dissmaisAlert(_ view: ViewController) {
+        DispatchQueue.main.async {
+            view.alert!.dismiss(animated: true, completion: nil)
+            //                view.setupCollectionView()
+        }
+    }
+    
+    fileprivate func getJSON(view: ViewController, dataManager: CollectionViewDataManager) {
+        showAlert(view)
         let url = URL(string: "http://api.giphy.com/v1/gifs/search?q=usa&api_key=LWsGBFf74m2HA28HFcG33Dhj1WmHYO2o")
         let task = URLSession.shared.dataTask(with: url!) {  (data, response, error)  in
+            guard error == nil else { return }
             let jsonDecoder = JSONDecoder()
             let responseModel = try? jsonDecoder.decode(Json4Swift_Base.self, from: data!)
-            print(responseModel)
-            WorkData.instance.jsonData = responseModel
+            dataManager.jsonData = responseModel
             for value in responseModel!.data! {
                 DispatchQueue.global().async {
-                    self.getImage(url: URL(string: value.images!.original!.url!)!, view: view)
+                    if let url = URL(string: (value.images?.original?.url) ?? "" ) {
+                        self.getImage(url: url, view: view, dataManager: dataManager)
+                    }
                 }
                 
             }
-            DispatchQueue.main.async {
-                view.alert!.dismiss(animated: true, completion: nil)
-//                view.setupCollectionView()
-            }
+            self.dissmaisAlert(view)
 
         }
         task.resume()
     }
-     func getImage(url: URL, view: ViewController) {
+   fileprivate func getImage(url: URL, view: ViewController, dataManager: CollectionViewDataManager) {
 
             print("Download Started \(Thread.current)")
         
@@ -42,7 +55,7 @@ class ServiceNetwork {
                 print(url)
                 guard let data = data, error == nil else { return }
                 print(response?.suggestedFilename ?? url.lastPathComponent)
-                WorkData.instance.addNewItem(view: view, image: UIImage(data: data)!)
+                dataManager.addNewItem(view: view, image: UIImage(data: data)!)
                 print("Download Finished")
                 
              }

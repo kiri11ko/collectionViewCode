@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var alert: UIAlertController?
+     var alert: UIAlertController?
     
     lazy var collectionView: UICollectionView = {
         
@@ -27,9 +27,8 @@ class ViewController: UIViewController {
     }()
     
     lazy var dataProvider: ColletionViewDataProvider = {
+        let dataProvider = ColletionViewDataProvider(view: self)
         
-        let dataProvider = ColletionViewDataProvider()
-//        dataProvider.datasource = self
         return dataProvider
     }()
     
@@ -38,26 +37,7 @@ class ViewController: UIViewController {
         self.view.addSubview(collectionView)
         
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-         alert = UIAlertController(title: "Downlods", message: "Please wait...", preferredStyle: .alert)
-        show(alert!, sender: nil)
-        
-    }
-    
-    func setupCollectionView() {
-        WorkData.init(view: self)
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        flowLayout.minimumLineSpacing = 100.0
-        flowLayout.minimumInteritemSpacing = 20.0
-        collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: flowLayout)
 
-        collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-//        collectionView.dataSource = self
-
-        self.view.addSubview(collectionView)
-    }
 
 }
 

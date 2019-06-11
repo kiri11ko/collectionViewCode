@@ -8,8 +8,8 @@
 
 import UIKit
 
-class WorkData {
-    static var instance = WorkData()
+class CollectionViewDataManager {
+
     var jsonData: Json4Swift_Base!
     var view: ViewController!
     var imageList: [UIImage] = [] {
