@@ -32,7 +32,7 @@ class ServiceNetwork {
         let task = URLSession.shared.dataTask(with: url!) {  (data, response, error)  in
             guard error == nil else { return }
             let jsonDecoder = JSONDecoder()
-            let responseModel = try? jsonDecoder.decode(Json4Swift_Base.self, from: data!)
+            let responseModel = try? jsonDecoder.decode(JsonBase.self, from: data!)
             for value in responseModel!.data! {
                 DispatchQueue.global().async {
                     if let url = URL(string: (value.images?.original?.url) ?? "" ) {
