@@ -39,7 +39,7 @@
 
 /* Begin PBXFileReference section */
 		1F07859022AA8024007332DD /* CollectionViewDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataProvider.swift; sourceTree = "<group>"; };
-		1FD68BE02254A16E00BA6323 /* ramaxTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ramaxTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FD68BE02254A16E00BA6323 /* collectionViewCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = collectionViewCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FD68BE32254A16E00BA6323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FD68BE52254A16E00BA6323 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1FD68BEA2254A16F00BA6323 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		1FD68BD72254A16E00BA6323 = {
 			isa = PBXGroup;
 			children = (
-				1FD68BE22254A16E00BA6323 /* ramaxTest */,
+				1FD68BE22254A16E00BA6323 /* collectionViewCode */,
 				1FD68BE12254A16E00BA6323 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,12 +92,12 @@
 		1FD68BE12254A16E00BA6323 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1FD68BE02254A16E00BA6323 /* ramaxTest.app */,
+				1FD68BE02254A16E00BA6323 /* collectionViewCode.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1FD68BE22254A16E00BA6323 /* ramaxTest */ = {
+		1FD68BE22254A16E00BA6323 /* collectionViewCode */ = {
 			isa = PBXGroup;
 			children = (
 				1FD68C622254B1ED00BA6323 /* Model2 */,
@@ -108,7 +108,7 @@
 				1FD68BEC2254A16F00BA6323 /* LaunchScreen.storyboard */,
 				1FD68BEF2254A16F00BA6323 /* Info.plist */,
 			);
-			path = ramaxTest;
+			path = collectionViewCode;
 			sourceTree = "<group>";
 		};
 		1FD68C622254B1ED00BA6323 /* Model2 */ = {
@@ -168,9 +168,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1FD68BDF2254A16E00BA6323 /* ramaxTest */ = {
+		1FD68BDF2254A16E00BA6323 /* collectionViewCode */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FD68BF22254A16F00BA6323 /* Build configuration list for PBXNativeTarget "ramaxTest" */;
+			buildConfigurationList = 1FD68BF22254A16F00BA6323 /* Build configuration list for PBXNativeTarget "collectionViewCode" */;
 			buildPhases = (
 				1FD68BDC2254A16E00BA6323 /* Sources */,
 				1FD68BDD2254A16E00BA6323 /* Frameworks */,
@@ -180,9 +180,9 @@
 			);
 			dependencies = (
 			);
-			name = ramaxTest;
+			name = collectionViewCode;
 			productName = ramaxTest;
-			productReference = 1FD68BE02254A16E00BA6323 /* ramaxTest.app */;
+			productReference = 1FD68BE02254A16E00BA6323 /* collectionViewCode.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -200,7 +200,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1FD68BDB2254A16E00BA6323 /* Build configuration list for PBXProject "ramaxTest" */;
+			buildConfigurationList = 1FD68BDB2254A16E00BA6323 /* Build configuration list for PBXProject "collectionViewCode" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -213,7 +213,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1FD68BDF2254A16E00BA6323 /* ramaxTest */,
+				1FD68BDF2254A16E00BA6323 /* collectionViewCode */,
 			);
 		};
 /* End PBXProject section */
@@ -433,7 +433,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1FD68BDB2254A16E00BA6323 /* Build configuration list for PBXProject "ramaxTest" */ = {
+		1FD68BDB2254A16E00BA6323 /* Build configuration list for PBXProject "collectionViewCode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FD68BF02254A16F00BA6323 /* Debug */,
@@ -442,7 +442,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1FD68BF22254A16F00BA6323 /* Build configuration list for PBXNativeTarget "ramaxTest" */ = {
+		1FD68BF22254A16F00BA6323 /* Build configuration list for PBXNativeTarget "collectionViewCode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FD68BF32254A16F00BA6323 /* Debug */,

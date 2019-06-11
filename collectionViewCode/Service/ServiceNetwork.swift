@@ -26,14 +26,13 @@ class ServiceNetwork {
         }
     }
     
-    fileprivate func getJSON(view: ViewController, dataManager: CollectionViewDataManager) {
+    func getJSON(view: ViewController, dataManager: CollectionViewDataManager) {
         showAlert(view)
         let url = URL(string: "http://api.giphy.com/v1/gifs/search?q=usa&api_key=LWsGBFf74m2HA28HFcG33Dhj1WmHYO2o")
         let task = URLSession.shared.dataTask(with: url!) {  (data, response, error)  in
             guard error == nil else { return }
             let jsonDecoder = JSONDecoder()
             let responseModel = try? jsonDecoder.decode(Json4Swift_Base.self, from: data!)
-            dataManager.jsonData = responseModel
             for value in responseModel!.data! {
                 DispatchQueue.global().async {
                     if let url = URL(string: (value.images?.original?.url) ?? "" ) {
@@ -47,16 +46,15 @@ class ServiceNetwork {
         }
         task.resume()
     }
+    
    fileprivate func getImage(url: URL, view: ViewController, dataManager: CollectionViewDataManager) {
-
-            print("Download Started \(Thread.current)")
-        
             getData(from: url) { data, response, error in
-                print(url)
+                
                 guard let data = data, error == nil else { return }
-                print(response?.suggestedFilename ?? url.lastPathComponent)
-                dataManager.addNewItem(view: view, image: UIImage(data: data)!)
-                print("Download Finished")
+                guard let image = UIImage(data: data) else { return }
+            
+                dataManager.imageList.append(image)
+
                 
              }
     }

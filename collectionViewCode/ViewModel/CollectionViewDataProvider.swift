@@ -9,18 +9,18 @@
 import UIKit
 
 class ColletionViewDataProvider: NSObject {
+    
     let delegate: UICollectionViewDelegate? = nil
     let datasource: UICollectionViewDataSource? = nil
     var collectionView: UICollectionView? = nil
-    var dataManager = CollectionViewDataManager()
+    let dataManager = CollectionViewDataManager()
+    
     init(view: ViewController) {
         let networkService = ServiceNetwork()
         networkService.getJSON(view: view, dataManager: dataManager)
     }
 }
 extension ColletionViewDataProvider: UICollectionViewDataSource {
-    
-
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataManager.imageList.count

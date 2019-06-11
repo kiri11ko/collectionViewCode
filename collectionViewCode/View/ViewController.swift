@@ -9,7 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-     var alert: UIAlertController?
+    var alert: UIAlertController?
+    private var token: NSKeyValueObservation?
     
     lazy var collectionView: UICollectionView = {
         
@@ -35,7 +36,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(collectionView)
-        
+        token = dataProvider.dataManager.observe(\CollectionViewDataManager.imageList, options: .new) { person, change in
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+            
+        }
     }
 
 
