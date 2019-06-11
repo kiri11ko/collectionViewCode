@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F07859122AA8024007332DD /* CollectionViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07859022AA8024007332DD /* CollectionViewDataProvider.swift */; };
 		1FD68BE42254A16E00BA6323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD68BE32254A16E00BA6323 /* AppDelegate.swift */; };
 		1FD68BE62254A16E00BA6323 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD68BE52254A16E00BA6323 /* ViewController.swift */; };
 		1FD68BEB2254A16F00BA6323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FD68BEA2254A16F00BA6323 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F07859022AA8024007332DD /* CollectionViewDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataProvider.swift; sourceTree = "<group>"; };
 		1FD68BE02254A16E00BA6323 /* ramaxTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ramaxTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FD68BE32254A16E00BA6323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FD68BE52254A16E00BA6323 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				1FD68BE52254A16E00BA6323 /* ViewController.swift */,
+				1F07859022AA8024007332DD /* CollectionViewDataProvider.swift */,
 				1FD68C652254B94700BA6323 /* ImageCollectionViewCell.swift */,
 			);
 			path = View;
@@ -244,6 +247,7 @@
 				1FD68C5A2254B1E700BA6323 /* Fixed_height_downsampled.swift in Sources */,
 				1FD68C522254B1E700BA6323 /* Original.swift in Sources */,
 				1FD68C5F2254B1E700BA6323 /* Fixed_height_still.swift in Sources */,
+				1F07859122AA8024007332DD /* CollectionViewDataProvider.swift in Sources */,
 				1FD68C542254B1E700BA6323 /* Pagination.swift in Sources */,
 				1FD68C5E2254B1E700BA6323 /* Images.swift in Sources */,
 				1FD68C6A2254C80F00BA6323 /* WorkData.swift in Sources */,

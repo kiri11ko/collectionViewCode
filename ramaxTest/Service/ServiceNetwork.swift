@@ -27,8 +27,8 @@ class ServiceNetwork {
                 
             }
             DispatchQueue.main.async {
-                view.alert.dismiss(animated: true, completion: nil)
-                view.setupCollectionView()
+                view.alert!.dismiss(animated: true, completion: nil)
+//                view.setupCollectionView()
             }
 
         }
