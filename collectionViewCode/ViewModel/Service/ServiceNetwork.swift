@@ -13,17 +13,17 @@ class ServiceNetwork {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
     
-    fileprivate func dissmaisAlert(_ view: ViewController) {
+    fileprivate func dissmaisAlert(_ view: StartCollectionViewController) {
         guard let alert = view.alert else { return }
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [unowned alert] in
             alert.dismiss(animated: true, completion: nil)
         }
     }
     
-    func getJSON(view: ViewController, dataManager: CollectionViewDataManager) {
+    func getJSON(view: StartCollectionViewController, dataManager: CollectionViewDataManager) {
         showAlert(view)
         guard let url = URL(string: "http://api.giphy.com/v1/gifs/search?q=usa&api_key=LWsGBFf74m2HA28HFcG33Dhj1WmHYO2o") else { return}
-        getData(from: url) { data, response, error in
+        getData(from: url) {[unowned view] data, response, error in
             guard error == nil else { return }
             guard let data = data else { return }
             let jsonDecoder = JSONDecoder()
@@ -32,7 +32,7 @@ class ServiceNetwork {
             for value in response {
                 DispatchQueue.global().async {
                     if let url = URL(string: (value.images?.original?.url) ?? "" ) {
-                        self.getImage(url: url, view: view, dataManager: dataManager)
+                        self.getImage(url: url, dataManager: dataManager)
                     }
                 }
                 
@@ -42,7 +42,7 @@ class ServiceNetwork {
         }
     }
     
-   fileprivate func getImage(url: URL, view: ViewController, dataManager: CollectionViewDataManager) {
+   fileprivate func getImage(url: URL, dataManager: CollectionViewDataManager) {
             getData(from: url) { data, response, error in
                 guard let data = data, error == nil else { return }
                 guard let image = UIImage(data: data) else { return }
@@ -52,8 +52,8 @@ class ServiceNetwork {
                 
              }
     }
-    fileprivate func showAlert(_ view: ViewController) {
-        DispatchQueue.main.async {
+    fileprivate func showAlert(_ view: StartCollectionViewController) {
+        DispatchQueue.main.async { [unowned view] in
             view.alert = UIAlertController(title: "Downlods", message: "Please wait...", preferredStyle: .alert)
             view.show(view.alert!, sender: nil)
         }

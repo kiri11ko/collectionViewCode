@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class StartCollectionViewController: UIViewController {
     var alert: UIAlertController?
     private var token: NSKeyValueObservation?
     
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.view.addSubview(collectionView)
         
-        token = dataProvider.dataManager.observe(\CollectionViewDataManager.imageList, options: .new) { _,_  in
+        token = dataProvider.dataManager.observe(\CollectionViewDataManager.imageList, options: .new) { [unowned self] _,_  in
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }

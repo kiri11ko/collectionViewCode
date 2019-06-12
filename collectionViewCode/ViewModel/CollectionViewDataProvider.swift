@@ -13,7 +13,7 @@ class ColletionViewDataProvider: NSObject {
     let datasource: UICollectionViewDataSource? = nil
     let dataManager = CollectionViewDataManager()
     
-    init(view: ViewController) {
+    init(view: StartCollectionViewController) {
         let networkService = ServiceNetwork()
         networkService.getJSON(view: view, dataManager: dataManager)
     }
